@@ -1,0 +1,1 @@
+Upload index.html + resume.pdf + assets folder to the repository root. This version preserves the previous portfolio sections and adds two photo presentations.
