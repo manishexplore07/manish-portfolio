@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Manish Kumar — Full Stack .NET Developer Portfolio">
+<title>Manish Kumar | Full Stack .NET Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#03060b; --panel:#08101b; --panel2:#0b1522; --text:#f5f7fb; --muted:#9aa8b8;
+  --blue:#1d75ff; --cyan:#42d7ff; --yellow:#ffbf3f; --green:#55e6a5;
+  --line:rgba(148,163,184,.16); --mono:"DM Mono",monospace; --sans:Inter,system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:radial-gradient(circle at 78% 15%,rgba(29,117,255,.12),transparent 28%),radial-gradient(circle at 65% 58%,rgba(255,191,63,.07),transparent 25%),var(--bg);color:var(--text);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+.container{width:min(1380px,calc(100% - 72px));margin:auto}
+nav{height:88px;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:20}
+.logo{font-weight:900;font-size:24px;letter-spacing:-1.2px}.logo i{color:var(--yellow);font-style:normal}
+.navlinks{display:flex;gap:36px;font-size:12px;font-weight:700;letter-spacing:.8px}
+.navlinks a{color:#b8c2d0;transition:.25s}.navlinks a:hover{color:#fff}
+.talk{border:1px solid rgba(255,255,255,.35);padding:13px 20px;border-radius:999px;font-size:12px;font-weight:800}
+.hero{min-height:calc(100vh - 88px);display:grid;grid-template-columns:46% 54%;align-items:center;gap:10px;position:relative;padding:36px 0 50px}
+.hero-copy{position:relative;z-index:8;padding-bottom:30px}
+.avail{display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(29,117,255,.55);background:rgba(29,117,255,.07);padding:10px 15px;border-radius:999px;color:#54c8ff;font:500 11px var(--mono);letter-spacing:.8px;text-transform:uppercase}
+.dot{width:7px;height:7px;background:#2b9cff;border-radius:50%;box-shadow:0 0 18px #2b9cff;animation:pulse 1.8s infinite}
+h1{font-size:clamp(58px,6.2vw,108px);line-height:.9;letter-spacing:-5px;margin:26px 0 26px;font-weight:900}
+h1 .blue{color:#2f82ff} h1 .gold{color:var(--yellow)}
+.kicker{font-size:17px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;margin-bottom:13px}
+.kicker:before{content:"";display:inline-block;width:48px;height:3px;background:var(--blue);vertical-align:middle;margin-right:14px}
+.hero-copy p{color:var(--muted);max-width:620px;font-size:15px;line-height:1.8}
+.ctas{display:flex;gap:13px;margin-top:30px;flex-wrap:wrap}
+.btn{padding:15px 21px;border-radius:12px;font-size:12px;font-weight:800;letter-spacing:.5px;display:inline-flex;align-items:center;gap:10px;transition:.25s}
+.btn.primary{background:linear-gradient(135deg,#1264ff,#2787ff);box-shadow:0 14px 40px rgba(29,117,255,.22)}
+.btn.ghost{border:1px solid var(--line);background:rgba(255,255,255,.02)}
+.btn:hover{transform:translateY(-3px)}
+
+.visual{height:650px;position:relative;display:flex;justify-content:center;align-items:center}
+.visual:before{content:"";position:absolute;width:510px;height:510px;border-radius:50%;background:radial-gradient(circle,rgba(29,117,255,.25),transparent 65%);filter:blur(25px)}
+.video-frame{position:relative;width:min(560px,92%);height:610px;border:1px solid rgba(255,255,255,.13);border-radius:28px;overflow:hidden;background:#07101a;box-shadow:0 40px 100px rgba(0,0,0,.6)}
+.video-bg{position:absolute;inset:-4%;background:url("assets/manish-hero.jpg") center 23%/cover no-repeat;filter:brightness(.7) saturate(.9);animation:cinematic 9s ease-in-out infinite alternate}
+.video-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(2,6,11,.08),rgba(2,6,11,.15) 45%,rgba(2,6,11,.9)),linear-gradient(90deg,rgba(29,117,255,.18),transparent 50%,rgba(255,155,45,.13))}
+.video-overlay:after{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,transparent,#44c8ff,transparent);box-shadow:0 0 18px #44c8ff;animation:scan 4s linear infinite}
+.play{position:absolute;top:44%;left:50%;transform:translate(-50%,-50%);width:92px;height:92px;border-radius:50%;display:grid;place-items:center;background:rgba(4,12,24,.72);border:1px solid rgba(66,215,255,.55);box-shadow:0 0 50px rgba(29,117,255,.32);z-index:3}
+.play span{width:0;height:0;border-top:10px solid transparent;border-bottom:10px solid transparent;border-left:17px solid #4ed5ff;margin-left:5px}
+.video-label{position:absolute;left:24px;top:22px;font:500 10px var(--mono);color:#d5e2ef;letter-spacing:1.2px;z-index:3}
+.video-time{position:absolute;left:24px;bottom:24px;font:500 10px var(--mono);color:#d8e3ed;z-index:3}
+.video-line{position:absolute;left:90px;right:24px;bottom:29px;height:2px;background:rgba(255,255,255,.22);z-index:3}
+.video-line i{display:block;width:18%;height:100%;background:#2e8cff;box-shadow:0 0 10px #2e8cff}
+.socials{position:absolute;right:-28px;top:36%;display:flex;flex-direction:column;gap:2px;padding:8px;border:1px solid var(--line);background:rgba(4,8,15,.8);backdrop-filter:blur(14px);border-radius:15px;z-index:8}
+.socials a{width:45px;height:45px;display:grid;place-items:center;color:#dbe8f5;font-size:13px;font-weight:800}.socials a:hover{color:#45cfff}
+.tech{position:absolute;bottom:23px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:6;width:max-content;max-width:92%}
+.tech span{padding:11px 13px;border:1px solid rgba(255,255,255,.13);background:rgba(5,10,17,.82);backdrop-filter:blur(12px);border-radius:12px;font-size:11px;font-weight:700;white-space:nowrap}
+
+.stats{border:1px solid rgba(29,117,255,.35);background:linear-gradient(90deg,rgba(9,18,31,.92),rgba(7,14,24,.75));border-radius:22px;padding:24px 18px;display:grid;grid-template-columns:repeat(4,1fr);margin:8px 0 90px;box-shadow:0 20px 60px rgba(0,0,0,.25)}
+.stat{padding:6px 24px;border-right:1px solid var(--line)}.stat:last-child{border:0}.num{font-size:31px;font-weight:900}.stat p{font-size:11px;color:var(--muted);margin-top:5px}.stat b{color:#58b9ff}
+.section{padding:80px 0}.section-label{font:500 11px var(--mono);color:#48baff;letter-spacing:1.5px;margin-bottom:16px}.section h2{font-size:clamp(34px,4vw,60px);letter-spacing:-2.5px;line-height:1.05;max-width:800px}
+.about{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;border-top:1px solid var(--line);padding-top:70px}.about p{color:var(--muted);line-height:1.85;font-size:14px;margin-top:18px}.about-card{border:1px solid var(--line);background:linear-gradient(145deg,#091523,#060b12);border-radius:22px;padding:28px}
+.about-card h3{font-size:15px;margin-bottom:18px}.about-card div{display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px solid var(--line);font-size:12px}.about-card div:last-child{border:0}.about-card span{color:var(--muted)}
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:38px}
+.card{border:1px solid var(--line);border-radius:20px;padding:25px;background:linear-gradient(145deg,rgba(11,21,34,.95),rgba(5,10,17,.95));min-height:300px;position:relative;overflow:hidden;transition:.3s}.card:hover{transform:translateY(-7px);border-color:rgba(66,215,255,.4)}.card:before{content:"";position:absolute;width:180px;height:180px;border-radius:50%;background:rgba(29,117,255,.12);filter:blur(40px);right:-60px;top:-60px}
+.badge{font:500 9px var(--mono);color:#4ed2ff;letter-spacing:1px;text-transform:uppercase}.card h3{font-size:22px;margin:13px 0}.card p{font-size:12.5px;color:var(--muted);line-height:1.7}.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:22px}.tags span{border:1px solid var(--line);padding:7px 9px;border-radius:8px;color:#b9c8d8;font-size:10px}
+.contact{border-top:1px solid var(--line);text-align:center;padding:110px 0}.contact h2{margin:0 auto 18px}.contact p{color:var(--muted);margin-bottom:28px}
+footer{border-top:1px solid var(--line);padding:25px 0;color:#718096;font:10px var(--mono);display:flex;justify-content:space-between}
+
+@keyframes cinematic{0%{transform:scale(1.03) translate3d(0,0,0)}50%{transform:scale(1.08) translate3d(-1.5%,1%,0)}100%{transform:scale(1.12) translate3d(1%,0,0)}}
+@keyframes scan{0%{top:0;opacity:0}12%{opacity:1}90%{opacity:1}100%{top:100%;opacity:0}}
+@keyframes pulse{50%{transform:scale(1.5);opacity:.55}}
+@media(max-width:1050px){.container{width:min(100% - 40px,900px)}.hero{grid-template-columns:1fr}.hero-copy{text-align:center}.hero-copy p{margin:auto}.kicker:before{display:none}.ctas{justify-content:center}.visual{height:600px}.socials{right:2px}.stats{margin-bottom:50px}.about{grid-template-columns:1fr}.projects{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){nav{height:72px}.navlinks{display:none}.talk{padding:10px 14px}.container{width:calc(100% - 28px)}.hero{padding-top:25px}.hero-copy{padding-bottom:0}h1{font-size:54px;letter-spacing:-3px}.visual{height:520px}.video-frame{height:500px}.tech{overflow:hidden;left:14px;transform:none;width:calc(100% - 28px);justify-content:flex-start}.tech span{font-size:9px;padding:9px}.stats{grid-template-columns:1fr 1fr;gap:12px}.stat{border-right:0;border-bottom:1px solid var(--line);padding:15px}.stat:nth-child(3),.stat:nth-child(4){border-bottom:0}.projects{grid-template-columns:1fr}.about{gap:28px}.section{padding:60px 0}.contact{padding:75px 0}footer{display:block;line-height:2}}
+</style>
+</head>
+<body>
+<div class="container">
+<nav>
+  <a class="logo" href="#">MANISH<span>.</span></a>
+  <div class="navlinks">
+    <a href="#about">ABOUT</a><a href="#projects">PROJECTS</a><a href="#skills">SKILLS</a><a href="#experience">EXPERIENCE</a><a href="#contact">CONTACT</a>
+  </div>
+  <a class="talk" href="#contact">LET'S TALK ↗</a>
+</nav>
+
+<main>
+<section class="hero">
+  <div class="hero-copy">
+    <div class="avail"><i class="dot"></i> Available for new opportunities</div>
+    <h1>BUILDING<br><span class="blue">ENTERPRISE</span><br><span class="gold">SOLUTIONS</span></h1>
+    <div class="kicker">Full Stack .NET Developer</div>
+    <p>I turn complex business requirements into scalable, performant, and impactful digital solutions — from payroll and HRMS workflows to clean APIs and modern interfaces.</p>
+    <div class="ctas">
+      <a class="btn primary" href="#projects">EXPLORE MY WORK ↗</a>
+      <a class="btn ghost" href="resume.pdf" target="_blank">DOWNLOAD RESUME ↓</a>
+    </div>
+  </div>
+
+  <div class="visual">
+    <div class="video-frame">
+      <div class="video-bg"></div>
+      <div class="video-overlay"></div>
+      <div class="video-label">MANISH / FULL STACK ENGINEER</div>
+      <div class="play"><span></span></div>
+      <div class="video-time">00:03 / 01:28</div><div class="video-line"><i></i></div>
+      <div class="tech">
+        <span>C#</span><span>ASP.NET Core</span><span>React.js</span><span>SQL Server</span><span>Azure</span>
+      </div>
+    </div>
+    <div class="socials">
+      <a href="https://github.com/manishexplore07" target="_blank" aria-label="GitHub">GH</a>
+      <a href="https://www.linkedin.com/in/manish-kumar-138246319/" target="_blank" aria-label="LinkedIn">in</a>
+      <a href="mailto:manishkumar.codes@gmail.com" aria-label="Email">@</a>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="stat"><div class="num">4+</div><p>Years <b>Experience</b></p></div>
+  <div class="stat"><div class="num">15+</div><p>Projects <b>Worked On</b></p></div>
+  <div class="stat"><div class="num">10+</div><p>Business <b>Modules</b></p></div>
+  <div class="stat"><div class="num">99%</div><p>Focus on <b>Delivery</b></p></div>
+</section>
+
+<section id="about" class="section">
+  <div class="about">
+    <div>
+      <div class="section-label">// ABOUT ME</div>
+      <h2>Passionate about building scalable & impactful solutions.</h2>
+      <p>Full Stack .NET Developer with 4+ years of experience across enterprise web applications, payroll and HRMS workflows, healthcare scheduling, and business APIs.</p>
+    </div>
+    <div class="about-card">
+      <h3>Core profile</h3>
+      <div><span>Role</span><b>Full Stack .NET Developer</b></div>
+      <div><span>Backend</span><b>C# · ASP.NET Core · Web API</b></div>
+      <div><span>Frontend</span><b>React.js · Blazor · JavaScript</b></div>
+      <div><span>Data</span><b>SQL Server · Oracle · ADO.NET</b></div>
+      <div><span>Cloud</span><b>Azure · DevOps · Docker</b></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="section">
+  <div class="section-label">// FEATURED PROJECTS</div>
+  <h2>Selected work from real business applications.</h2>
+  <div class="projects">
+    <article class="card"><div class="badge">01 · Enterprise HRMS</div><h3>HRMS — Toyota Kirloskar</h3><p>Payroll and salary-processing workflows, employee data, reimbursement and business APIs with Azure DevOps and cloud delivery.</p><div class="tags"><span>C#</span><span>ASP.NET Core</span><span>React</span><span>Oracle</span><span>Azure</span></div></article>
+    <article class="card"><div class="badge">02 · Healthcare</div><h3>DocOnline</h3><p>Healthcare appointment platform covering doctor profiles, availability, patient booking and RESTful API workflows.</p><div class="tags"><span>ASP.NET Core MVC</span><span>Blazor</span><span>SQL Server</span><span>Web API</span></div></article>
+    <article class="card"><div class="badge">03 · Agri-tech</div><h3>Agri Nxt</h3><p>Agriculture application built around business workflows, data operations and API integration using an Agile delivery process.</p><div class="tags"><span>ASP.NET MVC</span><span>ADO.NET</span><span>SQL Server</span><span>Swagger</span></div></article>
+  </div>
+</section>
+
+<section id="skills" class="section">
+  <div class="section-label">// SKILLS</div>
+  <h2>The stack I use to ship production-ready applications.</h2>
+  <div class="projects">
+    <article class="card"><div class="badge">Backend</div><h3>.NET Engineering</h3><p>C#, ASP.NET Core, MVC, Web API, Entity Framework Core, LINQ, Identity, JWT, ADO.NET and REST architecture.</p></article>
+    <article class="card"><div class="badge">Frontend</div><h3>Modern Interfaces</h3><p>React.js, JavaScript, HTML5, CSS3 and Blazor with responsive, business-focused user experiences.</p></article>
+    <article class="card"><div class="badge">Cloud & Data</div><h3>Delivery & Scale</h3><p>SQL Server, Oracle, Azure App Service, Azure SQL, Key Vault, APIM, Functions, Container Apps, Docker and Azure DevOps.</p></article>
+  </div>
+</section>
+
+<section id="experience" class="section">
+  <div class="about">
+    <div><div class="section-label">// EXPERIENCE</div><h2>From business requirement to production delivery.</h2></div>
+    <div class="about-card">
+      <div><span>Current</span><b>Software Engineer · Technoforte Software Pvt. Ltd.</b></div>
+      <div><span>Focus</span><b>Enterprise HRMS · Payroll · APIs</b></div>
+      <div><span>Engineering</span><b>Development · Debugging · Optimization</b></div>
+      <div><span>Delivery</span><b>CI/CD · Docker · Azure · Monitoring</b></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="section-label">// CONTACT</div>
+  <h2>Have a product or engineering problem to solve?</h2>
+  <p>Let's talk about .NET, APIs, enterprise systems, or your next project.</p>
+  <a class="btn primary" href="mailto:manishkumar.codes@gmail.com">START A CONVERSATION ↗</a>
+</section>
+</main>
+
+<footer><span>© 2026 MANISH KUMAR</span><span>FULL STACK .NET DEVELOPER · BANGALORE, INDIA</span></footer>
+</div>
+</body>
+</html>
